@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model UserManagementApp.Models.User
+
+<h2>Додати нового користувача</h2>
+
+<form action="@Url.Action("Create", "User")" method="post">
+    <div class="form-group">
+        <label for="FirstName">Ім'я</label>
+        <input type="text" name="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Прізвище</label>
+        <input type="text" name="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Email">Електронна пошта</label>
+        <input type="email" name="Email" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Додати користувача</button>
+</form>
+
+
+
+<a asp-controller="User" asp-action="Index" class="btn btn-danger">Повернутися на головну</a>

@@ -1,0 +1,18 @@
+﻿@model UserManagementApp.Models.User
+
+<h2>Деталі користувача</h2>
+
+<div>
+    <p>Ім'я: @Model.FirstName</p>
+    <p>Прізвище: @Model.LastName</p>
+    <p>Email: @Model.Email</p>
+    <p>Дата реєстрації: @Model.RegistrationDate.ToString("dd/MM/yyyy")</p>
+</div>
+
+
+<a href="@Url.Action("Index", "User")" class="btn btn-primary">Повернутися на головну сторінку</a>
+
+
+<form action="@Url.Action("Delete", "User", new { id = Model.Id })" method="post" style="display:inline;">
+    <button type="submit" class="btn btn-danger">Видалити користувача</button>
+</form>
